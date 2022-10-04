@@ -4,13 +4,14 @@ import {VelkommenPage} from './pages/VelkommenPage'
 import {AktiviteterPage} from './pages/AktiviteterPage'
 import {NotFoundPage} from './pages/NotFoundPage'
 import {SingleAktiviteterPage} from './pages/SingleAktiviteterPage'
+import {SearchPage} from './pages/SearchPage'
 
 
 export const DefaultRoutes = {
     VelkommenPage:'/',
     AktiviteterPage:'/AktiviteterPage',
     SingleAktiviteterPage:'/AktiviteterPage/:id',
-   
+    SearchPage:'/search'
 }
 
 
@@ -22,6 +23,7 @@ export const RoutesModule =(
             <Route path={DefaultRoutes.AktiviteterPage} element={<AktiviteterPage />} />
             {/* if the url === AktiviteterPage/21 */}
             <Route path={DefaultRoutes.SingleAktiviteterPage} element={<SingleAktiviteterPage />} />
+            <Route path={DefaultRoutes.SearchPage} element={<SearchPage />} />
             {/* the path with the * means whatever you have  = everything matches  */}
             <Route path={'*'} element={<NotFoundPage />}  />
         </Routes>

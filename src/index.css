@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.animation-fade {
+  animation: fade 1s;
+
+}
+
+@keyframes fade {
+    0% {opacity: 0;}
+    100% {opacity:1;}
+}
+
+.animation-slide-right {
+  animation: slide-right 1s;
+
+}
+
+@keyframes slide-right {
+    0%  {left: -200px; }
+    /* 50% {left:100px;} */
+    100% {left: 0px; }
+}
