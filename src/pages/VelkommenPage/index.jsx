@@ -17,7 +17,7 @@ export const VelkommenPage = ()=>{
      
 
        <h1 className='absolute bottom-25 text-[36px] text-[#5E2E53]'> Landrup <span className=' text-[#E1A1E9]'> Dance</span> </h1>
-       <hr className='w-48 h-12 absolute' /> 
+       <hr className='w-48 h-12  absolute underline-offset-4' /> 
        
        <button className='absolute bottom-14 w-[249px] p-4 class="block  
        text-[24px] text-center font-bold 
