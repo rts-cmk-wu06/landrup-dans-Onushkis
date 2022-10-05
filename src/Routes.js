@@ -5,13 +5,15 @@ import {AktiviteterPage} from './pages/AktiviteterPage'
 import {NotFoundPage} from './pages/NotFoundPage'
 import {SingleAktiviteterPage} from './pages/SingleAktiviteterPage'
 import {SearchPage} from './pages/SearchPage'
+import { Nav } from './components/Nav'
 
 
 export const DefaultRoutes = {
     VelkommenPage:'/',
     AktiviteterPage:'/AktiviteterPage',
     SingleAktiviteterPage:'/AktiviteterPage/:id',
-    SearchPage:'/search'
+    SearchPage:'/search',
+    Nav: '/nav'
 }
 
 
@@ -24,6 +26,7 @@ export const RoutesModule =(
             {/* if the url === AktiviteterPage/21 */}
             <Route path={DefaultRoutes.SingleAktiviteterPage} element={<SingleAktiviteterPage />} />
             <Route path={DefaultRoutes.SearchPage} element={<SearchPage />} />
+            <Route path={DefaultRoutes.Nav} element={<Nav />} />
             {/* the path with the * means whatever you have  = everything matches  */}
             <Route path={'*'} element={<NotFoundPage />}  />
         </Routes>
