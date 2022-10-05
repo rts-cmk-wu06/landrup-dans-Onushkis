@@ -47,11 +47,9 @@ export const AktiviteterPage = ()=>{
 {/*  to display data from array of objects we have to write a loop */}
 {/* .map is a method that has been introduced in js es2015 ..   */}`
 {/* () => {}`this is an arrow function .. think of it just like a normal function  */}
-{/* so we are going to print out every element in the array */}
-{/*  how does react know what to change  */}
+{/* so Im going to print out every element in the array */}
 {/* for react to be able to differtiate between them , we have to add a key prop to the wrapper  element for every child  */}
-{/* todo : talk about the virtual dom  */}
-{/* react , vue //   */}
+
  { allClasses.map((element)=>{
     return (
         // h-[356px] this kind of classes is called atomic css 

@@ -41,11 +41,25 @@ return (
     
     <>
    <main className=' p-8 h-full min-h-screen	  bg-[#5E2E53]'>
-    <h1 className='text-[#EAEAEA] text-[36px] text-left'>Søgeside</h1>
 
-    <input type="text" onChange={(event) =>
-    searchClasses(event)
+    <h1 className='text-[#EAEAEA] text-[36px] text-left'>Søg</h1>
+
+   <div className="relative mt-8 flex items-center">
+    <div className="flex absolute inset-y-0 left-0 items-center  pointer-events-none pl-6 text-[22px] ">
+
+            <svg aria-hidden="true" className="w-7 h-7 mt-6  text-gray-500 
+            dark:text-gray-400" fill="none" stroke="currentColor" 
+            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" 
+            strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </div>
+
+    <input type="search" id='search' className='w-[336px]  bg-[#E1A1E9] p-4  opacity-[.30] mt-6' onChange={(event) =>
+   
+   searchClasses(event) 
     } />
+    
+ </div>
+ 
 
     <section className='mt-5 h-3/6  w-full  rounded-2xl overflow-hidden'>
 {/*  to display data from array of objects we have to write a loop */}
@@ -53,11 +67,10 @@ return (
 {/* () => {}`this is an arrow function .. think of it just like a normal function  */}
 {/* so we are going to print out every element in the array */}
 {/*  how does react know what to change  */}
-{/* for react to be able to differtiate between them , we have to add a key prop to the wrapper  element for every child  */}
+{/* for react to be able to differtiate between them , I have to add a key prop to the wrapper  element for every child  */}
 {/* todo : talk about the virtual dom  */}
 {/* react , vue //   */}
-{/* we have to display only the searched classes if the user is searching */}
-{/* how do we know if the user is searching */}
+{/* I have to display only the searched classes if the user is searching */}
 {searchValue? ( 
   <>
   {/* if the user has enetered anything in search , display from the searchedd classes data */}
