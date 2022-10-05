@@ -7,19 +7,22 @@ import welcome from "../../assets/welcome.jpg"
 import { FiHome } from 'react-icons/fi'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { AiTwotoneCalendar } from 'react-icons/ai'
- import { Nav } from '../../components/Nav'
+//  import { Nav } from '../../components/Nav'
 
 
- export const Login = ()=>{
 
- const Login = () => {
+
+ export const Login = () => {
+
+    
     const [username,setUsername] = useState('')
     const [password,setPassword] = useState('')
     const navigate = useNavigate()
 
     // Readirect page from there to there
     const redirectToHomePage = () => {
-        navigate('/VelkommenPage')
+        // 
+        navigate(DefaultRoutes.VelkommenPage)
     }
 
     
@@ -43,7 +46,7 @@ import { AiTwotoneCalendar } from 'react-icons/ai'
            window.localStorage.setItem('user' , JSON.stringify(response.data))
            setTimeout(()=>{
                redirectToHomePage()
-           },1000)
+           },300)
            } catch (error) {
                // 
            }
@@ -55,7 +58,14 @@ import { AiTwotoneCalendar } from 'react-icons/ai'
     return (
         <>
        <main className='relative h-screen flex items-center justify-center'>
-       <img src={welcome} alt=""  className='object-cover h-screen ' />
+
+{/* in css there is the concept of z-index race  */}
+{/* this means that if you started any element from a specific z-index */}
+{/* it will trigger all overlaying elements to start from a bigger z-index */}
+{/* we always need to start from 1,2,3 not 10,20,30 */}
+{/* a lot of people tend to use z-index like 99999 and that is totally wrong */}
+{/* in negative -1,-2,-3 not -10, -20, -30 */}
+       <img src={welcome} alt=""  className='object-cover h-screen  fixed -z-10' />
        
      
 
@@ -69,8 +79,7 @@ import { AiTwotoneCalendar } from 'react-icons/ai'
            <input value={password} onChange={(e)=>setPassword(e.target.value)} type="password" id="password" className="block p-4 pl-14 w-full mt-6 mb-6 text-[22px]  text-gray-900 bg-gray-50  border border-gray-300 rounded-full dark:placeholder-gray-400  dark:focus:ring-[#9771f3] dark:focus:border-[#9771f3]" placeholder="adgangskode " required 
         
         />
-       <button className='absolute bottom-14 w-[249px] p-4 class="block  
-       text-[24px] text-center font-bold 
+       <button className='  w-[249px] p-4 text-[24px] text-center font-bold 
         text-[#EAEAEA] bg-[#5E2E53]  border-none focus:border-blue-500  
         rounded-lg   dark:focus:ring-[#9771f3] dark:focus:border-[#9771f3] hover:bg-[#dddbd4] 
         focus:outline-none focus:ring focus:ring-[#9771f3] animation-fade' >Login in
@@ -82,4 +91,4 @@ import { AiTwotoneCalendar } from 'react-icons/ai'
        </main>
         </>
  )
-    }}
+    }

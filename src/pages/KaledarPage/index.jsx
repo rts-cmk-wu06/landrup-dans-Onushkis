@@ -7,7 +7,7 @@ import { NavLink , useParams} from "react-router-dom";
 import { FiHome } from 'react-icons/fi'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { AiTwotoneCalendar } from 'react-icons/ai'
-import { Nav } from '../../components/Nav'
+// import { Nav } from '../../components/Nav'
 
 export const KalendarPage = ()=>{
 
@@ -33,7 +33,7 @@ export const KalendarPage = ()=>{
 </div>
         </section>
 
-        <Nav />
+        {/* <Nav /> */}
        </main>
         </>
     )

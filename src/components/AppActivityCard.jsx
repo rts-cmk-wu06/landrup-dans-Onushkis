@@ -1,13 +1,27 @@
+import { useNavigate } from 'react-router'
+import { DefaultRoutes } from '../Routes'
 
 
 
 // props :^are the data that the component is going to acccept from outside`
 export const AppActivityCard = ({element}) =>{
+  // this useNavigate() is called a custom hook
+  // useEffect , useState :^native hooks from react
+  // any hook will probably start with the convntion useSomething ..
+  const navigate = useNavigate()
 
 
 
     return (
-        <div key={element.id} className={`h-[356px] mb-[34px] relative rounded-2xl rounded-br-none overflow-hidden`}>
+      // attr :^key , id , className ..
+      //  key={} or key=""
+      //  events :^onChange , onClick ..
+      //  onClick={}`onClick={(e)=> {}}
+      // conncatention
+      //  if you have two strings and you need to put them together you can do it like this :^string1 + string2
+      //  DefaultRoutes.AktiviteterPage  + "/" + element.id 
+      //  `${DefaultRoutes.AktiviteterPage}/${element.id}`
+        <div key={element.id} onClick={(e) =>{navigate(DefaultRoutes.AktiviteterPage  + "/" + element.id)}} className={`h-[356px] mb-[34px] relative rounded-2xl rounded-br-none overflow-hidden`}>
          <img  src={element.asset?.url || ''}
         
         alt=""  className=' object-cover  h-full w-full  ' />

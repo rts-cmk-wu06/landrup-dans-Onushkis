@@ -5,7 +5,7 @@ import {AktiviteterPage} from './pages/AktiviteterPage'
 import {NotFoundPage} from './pages/NotFoundPage'
 import {SingleAktiviteterPage} from './pages/SingleAktiviteterPage'
 import {SearchPage} from './pages/SearchPage'
-import { Nav } from './components/Nav'
+// import { Nav } from './components/Nav'
 import { Login } from './pages/Login'
 import { KalendarPage } from './pages/KaledarPage'
 
@@ -16,7 +16,6 @@ export const DefaultRoutes = {
     AktiviteterPage:'/AktiviteterPage',
     SingleAktiviteterPage:'/AktiviteterPage/:id',
     SearchPage:'/search',
-    Nav: '/nav',
     KalendarPage:'/KalendarPage',
     Login: '/Login'
 }
@@ -31,7 +30,6 @@ export const RoutesModule =(
             {/* if the url === AktiviteterPage/21 */}
             <Route path={DefaultRoutes.SingleAktiviteterPage} element={<SingleAktiviteterPage />} />
             <Route path={DefaultRoutes.SearchPage} element={<SearchPage />} />
-            <Route path={DefaultRoutes.Nav} element={<Nav />} />
             <Route path={DefaultRoutes.KalendarPage} element={<KalendarPage />} />
             <Route path={DefaultRoutes.Login} element={<Login />} />
             {/* the path with the * means whatever you have  = everything matches  */}

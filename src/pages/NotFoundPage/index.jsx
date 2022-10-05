@@ -8,7 +8,7 @@ export const NotFoundPage = ()=>{
         <>
        <main>
      <h1>404</h1>
-       <button onClick={()=>navigate(`${DefaultRoutes.elkommenPage}`)
+       <button onClick={()=>navigate(`${DefaultRoutes.VelkommenPage}`)
 }>Go to home page</button>
        </main>
         </>

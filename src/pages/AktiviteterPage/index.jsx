@@ -5,7 +5,7 @@ import { DefaultRoutes } from "../../Routes";
 import { NavLink , useParams} from "react-router-dom";
 // import nessdance from '../../assets/nessdance.jpg'
 import {AppActivityCard} from '../../components/AppActivityCard'
-import { Nav } from '../../components/Nav'
+// import { Nav } from '../../components/Nav'
 
 
 export const AktiviteterPage = ()=>{
@@ -89,7 +89,7 @@ export const AktiviteterPage = ()=>{
 
 </div>
 </section> */}
-        <Nav />
+        {/* <Nav /> */}
        </main>
         </>
     )

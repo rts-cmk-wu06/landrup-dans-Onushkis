@@ -5,7 +5,7 @@ import { DefaultRoutes } from "../../Routes";
 import { NavLink , useParams} from "react-router-dom";
 // import nessdance from '../../assets/nessdance.jpg'
 import {AppActivityCard} from '../../components/AppActivityCard'
-import { Nav } from '../../components/Nav'
+// import { Nav } from '../../components/Nav'
 
 
 export const SearchPage = () => {
@@ -103,32 +103,8 @@ return (
    
     </section>
 
-    {/* <section className='mt-5 h-3/6  w-full relative rounded-2xl overflow-hidden'>
-
-<img src={nessdance} alt=""  className='rounded-2xl object-cover  h-full w-full rounded-br-none ' />
-
-<div className='absolute bottom-0 bg-[#E1A1E9] w-full p-3 text-left rounded-tr-[50px]  text-[#000000] text-[20px]'>
-<div className='ml-4 font-poppins '> 
-<h1 className='text-[18px]'>Junior Fitness Dance</h1>
-<h1 className='text-[18px]'>10-12 år</h1>
-</div>
-
-</div>
-</section>
-
-<section className='mt-5 h-3/6  w-full relative rounded-2xl overflow-hidden'>
-
-<img src={nessdance} alt=""  className='rounded-2xl object-cover  h-full w-full rounded-br-none ' />
-
-<div className='absolute bottom-0 bg-[#E1A1E9] w-full p-3 text-left rounded-tr-[50px]  text-[#000000] text-[20px]'>
-<div className='ml-4 font-poppins '> 
-<h1 className='text-[18px]'>Junior Fitness Dance</h1>
-<h1 className='text-[18px]'>10-12 år</h1>
-</div>
-
-</div>
-</section> */}
- <Nav />
+    
+ {/* <Nav /> */}
     
    </main>
     </>
