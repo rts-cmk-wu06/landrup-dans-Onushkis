@@ -32,7 +32,7 @@ const fetchClasses = async () => {
 // filter is a method that has been introduced inside the ecma2015
     const searchedClasses = allClasses.filter((element)=> {
     // does the element name is equal to the value the user has entered
-    return event.target.value && event.target.value.length && element.name.toLowerCase().slice(0,event.target.value.length) === event.target.value.toLowerCase()
+    return event.target.value && event.target.value.length && element.name.toLowerCase().slice(0,event.target.value.length) === event.target.value.toLowerCase() 
     })
 
     setSearchedClasses(searchedClasses)
