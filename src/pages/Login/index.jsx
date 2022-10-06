@@ -73,10 +73,10 @@ import { AiTwotoneCalendar } from 'react-icons/ai'
 
        <form onSubmit={(e)=> loginHandler(e)}> 
         
-        <input value={username} onChange={(e)=>setUsername(e.target.value)} type="text" id="username" className="block p-4   pl-14 w-full text-[22px]  text-gray-900 bg-gray-50  border border-gray-300 rounded-full dark:placeholder-gray-400 dark:focus:ring-[#9771f3] dark:focus:border-[#9771f3]" placeholder="brugernavn" required 
+        <input value={username} onChange={(e)=>setUsername(e.target.value)} type="text" id="username" className="block p-[0.5rem]  pl-14 w-full text-[22px]  text-gray-900 bg-gray-50 border border-gray-300  dark:placeholder-gray-400 dark:focus:ring-[#9771f3] dark:focus:border-[#9771f3]" placeholder="brugernavn" required 
         
         />
-           <input value={password} onChange={(e)=>setPassword(e.target.value)} type="password" id="password" className="block p-4 pl-14 w-full mt-6 mb-6 text-[22px]  text-gray-900 bg-gray-50  border border-gray-300 rounded-full dark:placeholder-gray-400  dark:focus:ring-[#9771f3] dark:focus:border-[#9771f3]" placeholder="adgangskode " required 
+           <input value={password} onChange={(e)=>setPassword(e.target.value)} type="password" id="password" className="block p-[0.5rem] pl-14 w-full mt-6 mb-6 text-[22px]  text-gray-900 bg-gray-50  border border-gray-300  dark:placeholder-gray-400  dark:focus:ring-[#9771f3] dark:focus:border-[#9771f3]" placeholder="adgangskode " required 
         
         />
        <button className='  w-[249px] p-4 text-[24px] text-center font-bold 

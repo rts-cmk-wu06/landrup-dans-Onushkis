@@ -7,7 +7,7 @@ import { AiTwotoneCalendar } from 'react-icons/ai'
 export const AppNavbar = () =>{
 
     return (
-        <nav className="flex bg-white px-5 py-10 w-100 fixed w-screen items-center justify-between bottom-0">
+        <nav className="flex bg-white px-5 py-10 w-100 fixed w-screen items-center justify-between bottom-0 text-[41px] ">
             {/* think of the NavLink as a tag that behaves exactly like the normal anchor tag <a></a>*/}
 <NavLink className={'px-2'} to={DefaultRoutes.HomePage} ><FiHome /></NavLink>
 <NavLink className={'px-2'} to={DefaultRoutes.SearchPage} ><AiOutlineSearch /></NavLink>
