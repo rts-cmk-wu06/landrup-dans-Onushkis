@@ -76,8 +76,14 @@ import { AiTwotoneCalendar } from 'react-icons/ai'
         <input value={username} onChange={(e)=>setUsername(e.target.value)} type="text" id="username" className="block p-[0.5rem]  pl-14 w-full text-[22px]  text-gray-900 bg-gray-50 border border-gray-300  dark:placeholder-gray-400 dark:focus:ring-[#9771f3] dark:focus:border-[#9771f3]" placeholder="brugernavn" required 
         
         />
-           <input value={password} onChange={(e)=>setPassword(e.target.value)} type="password" id="password" className="block p-[0.5rem] pl-14 w-full mt-6 mb-6 text-[22px]  text-gray-900 bg-gray-50  border border-gray-300  dark:placeholder-gray-400  dark:focus:ring-[#9771f3] dark:focus:border-[#9771f3]" placeholder="adgangskode " required 
-        
+        {/* whenever the user clicks any key in the keyboard inside the input , the input fires an event .. this event is an object that conains info about what the user has did in the input .. one key in this info is called keyCode .. this keyCode represets the key that the user has entered. ex: enter=13 ...  */}
+           <input value={password} onChange={(e)=>{
+            setPassword(e.target.value)
+           }}
+           onKeyDown={(e)=> {
+            if(e.keyCode == 13) loginHandler(e)
+           }}
+           type="password" id="password" className="block p-[0.5rem] pl-14 w-full mt-6 mb-6 text-[22px]  text-gray-900 bg-gray-50  border border-gray-300  dark:placeholder-gray-400  dark:focus:ring-[#9771f3] dark:focus:border-[#9771f3]" placeholder="adgangskode " required 
         />
        <button className='  w-[249px] p-4 text-[24px] text-center font-bold 
         text-[#EAEAEA] bg-[#5E2E53]  border-none focus:border-blue-500  

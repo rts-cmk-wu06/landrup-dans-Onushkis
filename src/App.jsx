@@ -22,6 +22,13 @@ const IsNavbarDisplayed = ()=>location.pathname !== DefaultRoutes.VelkommenPage
     // checks if the already saved token is expired, if so , remove it 
     const userData = window.localStorage.getItem('user')
 
+    //  the token is used to authanticate the user 
+    // it is a encrypted string that the browser and the server should have to be able to communicate securely 
+    //  ona => ano 
+    // coffee => eeffoc
+    //  rules for our agreement are only known by us 
+    // whenever the browser send a request to the backend , the backend will ask if the browser have a token or not ... 
+    
     if(userData){
       const tokenExpirationDate = new Date(JSON.parse(userData).validUntil)
 
