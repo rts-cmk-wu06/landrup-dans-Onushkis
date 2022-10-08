@@ -114,9 +114,9 @@ fetchClassData(location.id)
         
         {userData ? (<button className='absolute bottom-14 w-[249px] p-4 block  
        text-[18px] text-center font-bold 
-        text-[#EAEAEA] bg-[#5E2E53]  border-none focus:border-blue-500  
-        rounded-lg   dark:focus:ring-[#9771f3] dark:focus:border-[#9771f3] hover:bg-[#dddbd4] 
-        focus:outline-none focus:ring focus:ring-[#9771f3]' 
+        text-[#EAEAEA] bg-[#5E2E53]  border-none 
+        rounded-lg  
+        focus:outline-none ' 
          onClick={()=>joinClassHandler()}
 >{isUserRegistered ? 'leave' : 'join'}
 

@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router'
 import { DefaultRoutes } from "../../Routes";
 import { NavLink , useParams} from "react-router-dom";
 import welcome from "../../assets/welcome.jpg"
+import img2 from "../../assets/img2.png"
+
 import { FiHome } from 'react-icons/fi'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { AiTwotoneCalendar } from 'react-icons/ai'
@@ -66,6 +68,8 @@ import { AiTwotoneCalendar } from 'react-icons/ai'
 {/* a lot of people tend to use z-index like 99999 and that is totally wrong */}
 {/* in negative -1,-2,-3 not -10, -20, -30 */}
        <img src={welcome} alt=""  className='object-cover h-screen  fixed -z-10' />
+       <img src={img2} alt=""  className='object-cover h-screen  fixed -z-10' />
+
        
      
 
