@@ -11,14 +11,23 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import { AiTwotoneCalendar } from 'react-icons/ai'
 //  import { Nav } from '../../components/Nav'
 
+import { Formik, Field, Form } from 'formik';
+
+import * as Yup from 'yup';
 
 
+const lOGINSchema = Yup.object().shape({
+    username: Yup.string()
+  .min(2, 'Too Short!')
+  .max(50, 'Too Long!')
+  .required('Required'),
+password: Yup.string() .min(4, 'Too Short!')
+.required('Required'),
+});
 
  export const Login = () => {
 
-    
-    const [username,setUsername] = useState('')
-    const [password,setPassword] = useState('')
+    // hoocks :^useState , useEffect , ... use .. 
     const navigate = useNavigate()
 
     // Readirect page from there to there
@@ -37,10 +46,10 @@ import { AiTwotoneCalendar } from 'react-icons/ai'
     }
         ,[])
 
+
         // Login api + safe in local storage
 
-        const loginHandler = async(e) =>{
-            e.preventDefault();
+        const loginHandler = async({username , password}) =>{
            try {
             // the link im senden user name and password to this link
             //I get the respoce and than i get the token
@@ -78,30 +87,52 @@ import { AiTwotoneCalendar } from 'react-icons/ai'
      
 
        {/* Form components  */}
+       <Formik
+      initialValues={{
+        username: '',
+        password: '',
+      }}
+      onSubmit={(values )=> loginHandler(values )}
+      validationSchema={lOGINSchema}
+    >
+        {({ errors, touched }) => {
+            return (
 
-       <form onSubmit={(e)=> loginHandler(e)}> 
-        
-        <input value={username} onChange={(e)=>setUsername(e.target.value)} type="text" id="username" className="block p-[0.5rem]  pl-14 w-full text-[22px]  text-gray-900 bg-gray-50 border border-gray-300  dark:placeholder-gray-400 dark:focus:ring-[#9771f3] dark:focus:border-[#9771f3]" placeholder="brugernavn" required 
-        
-        />
+
+      <Form>
+         <Field  autoComplete="off" name="username"  className="block p-[0.5rem]  pl-14 w-full text-[22px]  text-gray-900 bg-gray-50 border border-gray-300  dark:placeholder-gray-400 dark:focus:ring-[#9771f3] dark:focus:border-[#9771f3] " placeholder="brugernavn" required  />
+        {/* <Field value={username} onChange={(e)=>setUsername(e.target.value)} type="text" id="username" className="block p-[0.5rem]  pl-14 w-full text-[22px]  text-gray-900 bg-gray-50 border border-gray-300  dark:placeholder-gray-400 dark:focus:ring-[#9771f3] dark:focus:border-[#9771f3]" placeholder="brugernavn" required  
+         /> */}
+        <p className='text-[#ff0000] text-left'>{errors.username && touched.username ? (
+             <span>{errors.username}</span>
+           ) : null}</p>
+
+           <div className="mb-3"></div>
         {/* whenever the user clicks any key in the keyboard inside the input , the input fires an event .. this event is an object that conains info about what the user has did in the input .. one key in this info is called keyCode .. this keyCode represets the key that the user has entered. ex: enter=13 ...  */}
-           <input value={password} onChange={(e)=>{
+        <Field name="password"  className="block p-[0.5rem]  pl-14 w-full text-[22px]  text-gray-900 bg-gray-50 border border-gray-300  dark:placeholder-gray-400 dark:focus:ring-[#9771f3] dark:focus:border-[#9771f3] " placeholder="adgangskode " required  />
+        <p className='text-[#ff0000] text-left'>{errors.password && touched.password ? (
+             <span>{errors.password}</span>
+           ) : null}</p>
+                      <div className="mb-3"></div>
+
+           {/* <Field value={password} onChange={(e)=>{
             setPassword(e.target.value)
            }}
            onKeyDown={(e)=> {
             if(e.keyCode == 13) loginHandler(e)
            }}
            type="password" id="password" className="block p-[0.5rem] pl-14 w-full mt-6 mb-6 text-[22px]  text-gray-900 bg-gray-50  border border-gray-300  dark:placeholder-gray-400  dark:focus:ring-[#9771f3] dark:focus:border-[#9771f3]" placeholder="adgangskode " required 
-        />
-       <button className='  w-[249px] p-4 text-[24px] text-center font-bold 
-        text-[#EAEAEA] bg-[#5E2E53]  border-none focus:border-blue-500  
-        rounded-lg   dark:focus:ring-[#9771f3] dark:focus:border-[#9771f3] hover:bg-[#dddbd4] 
-        focus:outline-none focus:ring focus:ring-[#9771f3] animation-fade' >Login in
+        /> */}
+       <button  type="submit" className='  w-[249px] p-4 text-[24px] text-center font-bold 
+        text-[#EAEAEA] bg-[#5E2E53]  border-none  
+        rounded-lg      ' >Login in
         
 </button>) 
 
-</form>
+</Form>
+        )}}
 
+</Formik>
        </main>
         </>
  )

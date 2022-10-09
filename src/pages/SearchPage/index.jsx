@@ -45,21 +45,23 @@ return (
 
     <h1 className='text-[#EAEAEA] text-[36px] text-left'>Søg</h1>
 
+   <div className='text-leftt'>
    <div className="relative mt-8 flex items-center">
-    <div className="flex absolute inset-y-0 left-0 items-center  pointer-events-none pl-6 text-[22px] ">
+   <div className="flex absolute inset-y-0 right-[10px] items-center  pointer-events-none pl-6 text-[22px] ">
 
-            <svg aria-hidden="true" className="w-7 h-7 mt-6  text-gray-500 
-            dark:text-gray-400" fill="none" stroke="currentColor" 
-            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" 
-            strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-        </div>
+<svg aria-hidden="true" className="w-7 h-7 mt-6  text-gray-500 
+dark:text-gray-400" fill="none" stroke="currentColor" 
+viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" 
+strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+</div>
 
-    <input type="search" id='search' className='w-[336px]  bg-[#E1A1E9] p-4  opacity-[.30] mt-6' onChange={(event) =>
-   
-   searchClasses(event) 
-    } />
-    
- </div>
+<input autoComplete='off' type="text" id='search' className='w-[336px]  bg-[#E1A1E9] p-4  opacity-[.30] mt-6' onChange={(event) =>
+
+searchClasses(event) 
+} />
+</div>
+{searchValue&&<p className='text-left'>there are {searchedClasses.length || '0'} results for your search </p>}
+   </div>
  
 
     <section className='mt-5 h-3/6  w-full  rounded-2xl overflow-hidden'>
