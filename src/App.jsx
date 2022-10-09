@@ -10,13 +10,15 @@ import { useLocation } from 'react-router';
 import { DefaultRoutes } from './Routes';
 
 export const App = (props) => {
+
+  const [userData , setUserData] = useState()
   // we need to look into the url of the page .. if it is equal to our velkommenpage link .. remove out navbar
 const location = useLocation()
 
 // this is going to be triggered whenever the app gets rerendered 
 // const IsNavbarDisplayed = location.pathname !== DefaultRoutes.VelkommenPage
 // this is going to be triggered whenever it  gets called 
-const IsNavbarDisplayed = ()=>location.pathname !== DefaultRoutes.VelkommenPage
+const IsNavbarDisplayed = ()=> location.pathname.toLowerCase() !== DefaultRoutes.VelkommenPage.toLowerCase() && location.pathname.toLowerCase() !== DefaultRoutes.Login.toLowerCase()
 
   useEffect(() => {
     // checks if the already saved token is expired, if so , remove it 
@@ -31,9 +33,12 @@ const IsNavbarDisplayed = ()=>location.pathname !== DefaultRoutes.VelkommenPage
     
     if(userData){
       const tokenExpirationDate = new Date(JSON.parse(userData).validUntil)
+      setUserData(JSON.parse(userData))
 
       if(tokenExpirationDate <= new Date()){
+        // if the token is expired then the user has to login again
       window.localStorage.removeItem('user')
+      setUserData()
     }
     }
 
@@ -43,7 +48,7 @@ const IsNavbarDisplayed = ()=>location.pathname !== DefaultRoutes.VelkommenPage
     <div className="App">
       {props.children}
       {/* if the current url is not equal to velkommenPage display the navbar */}
-      {IsNavbarDisplayed() ? <AppNavbar /> : null}
+      {IsNavbarDisplayed() ? <AppNavbar  /> : null}
     </div>
   );
 }

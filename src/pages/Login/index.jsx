@@ -42,9 +42,13 @@ import { AiTwotoneCalendar } from 'react-icons/ai'
         const loginHandler = async(e) =>{
             e.preventDefault();
            try {
+            // the link im senden user name and password to this link
+            //I get the respoce and than i get the token
+
                const response = await axios.post('http://localhost:4000/auth/token' , {username , password})
                
-           // not secure , todo : fix it later
+           // Here im sving dATA TO MY LOCAL STORAGE 
+           // than we  redirectToHomePage()
            window.localStorage.setItem('user' , JSON.stringify(response.data))
            setTimeout(()=>{
                redirectToHomePage()
