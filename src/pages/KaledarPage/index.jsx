@@ -40,7 +40,7 @@ const [userActivities,setUserActivities] = useState()
     return (
         
         <>
-       <main className=' p-8 h-full min-h-screen	 bg-[#5E2E53]'>
+       <main className=' p-8 h-full min-h-screen bg-[#5E2E53]'>
         <h1 className='text-[#EAEAEA] text-[36px] text-left'>Kalendar</h1>
 {userActivities && userActivities.length ? (
     <section className=' mt-12 '>
